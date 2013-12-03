@@ -1,0 +1,39 @@
+<h1>Listagem de Entrantes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nº do Protocolo</th>
+      <th>Data do Protocolo</th>
+      <th>Área</th>
+      <th>Assunto</th>
+      <th>Procedimento</th>
+      <th>Processo Principal</th>
+      <th>Data Procedimento</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @entrantes.each do |entrante| %>
+      <tr>
+        <td><%= entrante.prot_doc %></td>
+        <td><%= entrante.dt_prot_doc %></td>
+        <td><%= entrante.area %></td>
+        <td><%= entrante.assunto %></td>
+        <td><%= entrante.procedimento %></td>
+        <td><%= entrante.processo_principal %></td>
+        <td><%= entrante.dt_procedimento %></td>
+        <td><%= link_to 'Mostrar', entrante %></td>
+        <td><%= link_to 'Editar', edit_entrante_path(entrante) %></td>
+        <td><%= link_to 'Apagar', entrante, method: :delete, data: { confirm: 'Tem certeza?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Novo Entrante', new_entrante_path %>

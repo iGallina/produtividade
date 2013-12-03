@@ -1,0 +1,43 @@
+<%= simple_form_for @entrante do |f| %>
+  <% if @entrante.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@entrante.errors.count, "error") %> não permitiu esse processo de ser salvo:</h2>
+
+      <ul>
+      <% @entrante.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label "Nº do Protocolo" %>
+    <%= f.text_field :prot_doc %>
+  </div>
+  <div class="field">
+    <%= f.label "Data do Protocolo" %>
+    <%= f.text_field :dt_prot_doc %>
+  </div>
+  <div class="field">
+    <%= f.input :area, :collection => ['TÉCNICA', 'LEGAL'], :prompt => "Selecione", :label => "Área" %>
+  </div>
+  <div class="field">
+    <%= f.label "Assunto" %>
+    <%= f.text_field :assunto %>
+  </div>
+  <div class="field">
+    <%= f.input :area, :collection => ['INSTAURADO', 'ANEXADO', 'ARQUIVADO', 'PUBLICADO', 'EXPEDIDO', 'ENCAMINHADO'], :prompt => "Selecione", :label => "Procedimento" %>
+  </div>
+  <div class="field">
+    <%= f.label "Processo Principal" %>
+    <%= f.text_field :processo_principal %>
+  </div>
+  <div class="field">
+    <%= f.label "Data do Procedimento" %>
+    <%= f.text_field :dt_procedimento %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
