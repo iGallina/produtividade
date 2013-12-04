@@ -23,11 +23,10 @@
     <%= f.input :area, :collection => ['TÉCNICA', 'LEGAL'], :prompt => "Selecione", :label => "Área" %>
   </div>
   <div class="field">
-    <%= f.label "Assunto" %>
-    <%= f.text_field :assunto %>
+    <%= f.input :assunto, :collection => @assunto, :prompt => "Selecione", :label => "Assunto" %>
   </div>
   <div class="field">
-    <%= f.input :area, :collection => ['INSTAURADO', 'ANEXADO', 'ARQUIVADO', 'PUBLICADO', 'EXPEDIDO', 'ENCAMINHADO'], :prompt => "Selecione", :label => "Procedimento" %>
+    <%= f.input :procedimento, :collection => ['INSTAURADO', 'ANEXADO', 'ARQUIVADO', 'PUBLICADO', 'EXPEDIDO', 'ENCAMINHADO'], :prompt => "Selecione", :label => "Procedimento" %>
   </div>
   <div class="field">
     <%= f.label "Processo Principal" %>

@@ -15,6 +15,7 @@ class EntrantesController < ApplicationController
   # GET /entrantes/new
   def new
     @entrante = Entrante.new
+    @assunto = ['OUTORGA','PÓS-OUTORGA JURÍDICO','PÓS-OUTORGA TÉCNICO','RENOVAÇÃO','CANAL DA CIDADANIA']
   end
 
   # GET /entrantes/1/edit
