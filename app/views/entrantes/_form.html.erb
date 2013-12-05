@@ -20,23 +20,16 @@
     <%= f.text_field :dt_prot_doc %>
   </div>
   <div class="field">
-    <%= f.input :area, :collection => ['TÉCNICA', 'LEGAL'], :prompt => "Selecione", :label => "Área" %>
-  </div>
-  <div class="field">
     <%= f.input :assunto, :collection => @assunto, :prompt => "Selecione", :label => "Assunto" %>
   </div>
   <div class="field">
-    <%= f.input :procedimento, :collection => ['INSTAURADO', 'ANEXADO', 'ARQUIVADO', 'PUBLICADO', 'EXPEDIDO', 'ENCAMINHADO'], :prompt => "Selecione", :label => "Procedimento" %>
+    <%= f.input :procedimento, :collection => ['INSTAURADO', 'ANEXADO', 'ARQUIVADO', 'PUBLICADO', 'EXPEDIDO', 'ENCAMINHADO INTERNO', 'ENCAMINHADO ANATEL', 'ENTRANTE'], :prompt => "Selecione", :label => "Procedimento" %>
   </div>
-  <div class="field">
+  <div class="field" id="processo_principal" style="display: none;">
     <%= f.label "Processo Principal" %>
     <%= f.text_field :processo_principal %>
   </div>
-  <div class="field">
-    <%= f.label "Data do Procedimento" %>
-    <%= f.text_field :dt_procedimento %>
-  </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.button :submit, 'Criar Ação' %>
   </div>
 <% end %>

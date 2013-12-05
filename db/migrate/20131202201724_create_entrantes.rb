@@ -3,7 +3,6 @@ class CreateEntrantes < ActiveRecord::Migration
     create_table :entrantes do |t|
       t.string :prot_doc
       t.string :dt_prot_doc
-      t.string :area
       t.string :assunto
       t.string :procedimento
       t.string :processo_principal

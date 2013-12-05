@@ -11,18 +11,32 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131202201724) do
+ActiveRecord::Schema.define(version: 20131205201634) do
 
   create_table "entrantes", force: true do |t|
     t.string   "prot_doc"
     t.string   "dt_prot_doc"
-    t.string   "area"
     t.string   "assunto"
     t.string   "procedimento"
     t.string   "processo_principal"
     t.string   "dt_procedimento"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "deleted",            default: false, null: false
+    t.datetime "deleted_at"
+  end
+
+  create_table "nota_tecnicas", force: true do |t|
+    t.string   "data_nota"
+    t.string   "numero_nota"
+    t.string   "numero_processo"
+    t.string   "status"
+    t.string   "nome_do_analista"
+    t.string   "area"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.boolean  "deleted",          default: false, null: false
+    t.datetime "deleted_at"
   end
 
 end
