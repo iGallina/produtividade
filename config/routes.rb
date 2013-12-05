@@ -1,4 +1,7 @@
 Produtividade::Application.routes.draw do
+  resources :notas_tecnicas
+
+  resources :nota_tecnicas
   resources :entrantes
 
   # The priority is based upon order of creation: first created -> highest priority.

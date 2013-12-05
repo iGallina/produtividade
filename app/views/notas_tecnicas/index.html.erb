@@ -1,0 +1,27 @@
+<h1>Listing notas_tecnicas</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Exit</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @notas_tecnicas.each do |notas_tecnica| %>
+      <tr>
+        <td><%= notas_tecnica.exit %></td>
+        <td><%= link_to 'Show', notas_tecnica %></td>
+        <td><%= link_to 'Edit', edit_notas_tecnica_path(notas_tecnica) %></td>
+        <td><%= link_to 'Destroy', notas_tecnica, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Notas tecnica', new_notas_tecnica_path %>

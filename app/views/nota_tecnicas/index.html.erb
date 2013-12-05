@@ -1,0 +1,35 @@
+<h1>Listing nota_tecnicas</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Data da Nota</th>
+      <th>Nº Nota</th>
+      <th>Nº processo</th>
+      <th>Status</th>
+      <th>Nome do Analista</th>
+      <th>Área</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @nota_tecnicas.each do |nota_tecnica| %>
+      <tr>
+        <td><%= nota_tecnica.data_nota %></td>
+        <td><%= nota_tecnica.numero_nota %></td>
+        <td><%= nota_tecnica.numero_processo %></td>
+        <td><%= nota_tecnica.status %></td>
+        <td><%= nota_tecnica.nome_do_analista %></td>
+        <td><%= nota_tecnica.area %></td>
+        <td><%= link_to 'Apagar', nota_tecnica, method: :delete, data: { confirm: 'Tem certeza?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Nova Nota Técnica', new_nota_tecnica_path %>

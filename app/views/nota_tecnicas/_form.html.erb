@@ -1,0 +1,39 @@
+<%= simple_form_for @nota_tecnica do |f| %>
+  <% if @nota_tecnica.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@nota_tecnica.errors.count, "error") %> prohibited this nota_tecnica from being saved:</h2>
+
+      <ul>
+      <% @nota_tecnica.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+  <div class="field">
+    <%= f.label "Nome do Analista" %><br>
+    <%= f.text_field :nome_do_analista %>
+  </div>
+  <div class="field">
+    <%= f.input :area, :collection => ['TÉCNICA', 'LEGAL'], :prompt => "Selecione", :label => "Área" %>
+  </div>
+    <%= f.label "Data da Nota Técnica" %><br>
+    <%= f.text_field :data_nota %>
+  </div>
+  <div class="field">
+    <%= f.label "Nº da Nota" %><br>
+    <%= f.text_field :numero_nota %>
+  </div>
+  <div class="field">
+    <%= f.label "Nº do Processo" %><br>
+    <%= f.text_field :numero_processo %>
+  </div>
+  <div class="field">
+    <%= f.input :status, :collection => ['DEFERIDO', 'INDEFERIDO', 'EXIGÊNCIA', 'OUTRAS PROVIDÊNCIAS', 'EXPEDIDO', 'ENCAMINHADO_INTERNO', 'ENCAMINHADO_ANATEL', 'ENTRANTE'], :prompt => "Selecione", :label => "Status" %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

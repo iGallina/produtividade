@@ -7,11 +7,6 @@ class EntrantesController < ApplicationController
     @entrantes = Entrante.all
   end
 
-  # GET /entrantes/1
-  # GET /entrantes/1.json
-  def show
-  end
-
   # GET /entrantes/new
   def new
     @entrante = Entrante.new
