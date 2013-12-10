@@ -1,0 +1,24 @@
+h1 Listagem de Ações
+table
+  thead
+    tr
+      th Nº do Protocolo
+      th Data do Protocolo
+      th Assunto
+      th Procedimento
+      th Processo Principal
+      th Data Procedimento
+      th
+      th
+      th
+  tbody
+    - @entrantes.each do |entrante| 
+      tr
+        td = entrante.prot_doc 
+        td = entrante.dt_prot_doc 
+        td = entrante.assunto 
+        td = entrante.procedimento 
+        td = entrante.processo_principal 
+        td =l entrante.created_at 
+        td = link_to 'Apagar', entrante, method: :delete, data: { confirm: 'Tem certeza?' }
+= link_to 'Nova Ação', new_entrante_path 

@@ -1,0 +1,29 @@
+h1 Listagem de Nome
+table 
+  thead 
+    tr 
+      th Tipo
+      th Assunto
+      th Data
+      th Cprod
+      th Sem cprod
+      th Mais de um processo
+      th Arquivo
+      th 
+      th 
+      th
+  tbody 
+     - @renomears.each do |renomear|  
+      tr 
+        td = renomear.tipo  
+        td = renomear.assunto  
+        td = renomear.data  
+        td = renomear.cprod  
+        td = renomear.sem_cprod  
+        td = renomear.mais_de_um_processo  
+        td = renomear.arquivo  
+        td = link_to 'Show', renomear  
+        td = link_to 'Edit', edit_renomear_path(renomear)  
+        td = link_to 'Destroy', renomear, method: :delete, data: { confirm: 'Tem Certeza?' }
+br
+= link_to 'Novo Nome de Arquivo', new_renomear_path  
