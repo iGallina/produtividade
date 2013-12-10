@@ -1,0 +1,44 @@
+<%= simple_form_for(@renomear, html: {class: 'form-horizontal' }) do |f| %>
+  <% if @renomear.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@renomear.errors.count, "error") %> prohibited this renomear from being saved:</h2>
+
+      <ul>
+      <% @renomear.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :tipo %><br>
+    <%= f.text_field :tipo %>
+  </div>
+  <div class="field">
+    <%= f.label :assunto %><br>
+    <%= f.text_field :assunto %>
+  </div>
+  <div class="field">
+    <%= f.input :data, :as => :datetime_picker, :label => "Data" %>
+  </div>
+  <div class="field">
+    <%= f.label :cprod %><br>
+    <%= f.text_field :cprod %>
+  </div>
+  <div class="field">
+    <%= f.label :sem_cprod %><br>
+    <%= f.check_box :sem_cprod %>
+  </div>
+  <div class="field">
+    <%= f.label :mais_de_um_processo %><br>
+    <%= f.check_box :mais_de_um_processo %>
+  </div>
+  <div class="field">
+    <%= f.label :arquivo %><br>
+    <%= f.text_field :arquivo %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131205201634) do
+ActiveRecord::Schema.define(version: 20131209200728) do
 
   create_table "entrantes", force: true do |t|
     t.string   "prot_doc"
@@ -37,6 +37,24 @@ ActiveRecord::Schema.define(version: 20131205201634) do
     t.datetime "updated_at"
     t.boolean  "deleted",          default: false, null: false
     t.datetime "deleted_at"
+  end
+
+  create_table "notas_tecnicas", force: true do |t|
+    t.string   "exit"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "renomears", force: true do |t|
+    t.string   "tipo"
+    t.string   "assunto"
+    t.datetime "data"
+    t.string   "cprod"
+    t.boolean  "sem_cprod"
+    t.boolean  "mais_de_um_processo"
+    t.string   "arquivo"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end

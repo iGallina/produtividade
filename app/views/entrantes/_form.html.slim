@@ -1,0 +1,31 @@
+= simple_form_for(@entrante, html: {class: 'form-horizontal' }) do |f| 
+  - if @entrante.errors.any? 
+    div#error_explanation
+      h2 = pluralize(@entrante.errors.count, "error")
+      | não permitiu esse processo de ser salvo
+
+      ul 
+        - @entrante.errors.full_messages.each do |msg| 
+        li = msg
+  div.field
+    = f.label "Nº do Protocolo"
+    = f.text_field :prot_doc
+ 
+  div.field
+    = f.label "Data do Protocolo"
+    = f.text_field :dt_prot_doc
+ 
+  div.field
+    = f.input :assunto, :collection => @assunto, :prompt => "Selecione", :label => "Assunto"
+ 
+  div.field
+    = f.input :procedimento, :collection => ['INSTAURADO', 'ANEXADO', 'ARQUIVADO', 'PUBLICADO', 'EXPEDIDO', 'ENCAMINHADO INTERNO', 'ENCAMINHADO ANATEL', 'ENTRANTE'], :prompt => "Selecione", :label => "Procedimento"
+ 
+  div.field
+    #processo_principal
+      | style="display: none;"
+      = f.label "Processo Principal"
+      = f.text_field :processo_principal
+
+  div.actions
+    = f.button :submit, label: 'Criar Ação

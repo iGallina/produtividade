@@ -1,4 +1,6 @@
 Produtividade::Application.routes.draw do
+  resources :renomears
+
   resources :notas_tecnicas
 
   resources :nota_tecnicas

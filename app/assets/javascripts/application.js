@@ -13,4 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require maskedinput
+//= require bootstrap-datetimepicker
+//= bootstrap.min
 //= require_tree .
