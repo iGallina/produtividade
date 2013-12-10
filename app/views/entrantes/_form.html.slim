@@ -6,7 +6,7 @@
 
       ul 
         - @entrante.errors.full_messages.each do |msg| 
-        li = msg
+          li = msg
   div.field
     = f.label "Nº do Protocolo"
     = f.text_field :prot_doc
@@ -23,9 +23,8 @@
  
   div.field
     #processo_principal
-      | style="display: none;"
       = f.label "Processo Principal"
       = f.text_field :processo_principal
 
   div.actions
-    = f.button :submit, label: 'Criar Ação
+    = f.button :submit, "Criar Ação"

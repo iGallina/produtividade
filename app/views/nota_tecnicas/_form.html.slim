@@ -1,12 +1,14 @@
 = simple_form_for(@nota_tecnica, html: {class: 'form-horizontal' }) do |f|
   - if @nota_tecnica.errors.any?
     div#error_explanation
-      h2 = pluralize(@nota_tecnica.errors.count, "error")
-      | não permitiu esse processo de ser salvo
+      h2 
+        = pluralize(@nota_tecnica.errors.count, "error")
+        | não permitiu esse processo de ser salvo:
 
       ul
         - @nota_tecnica.errors.full_messages.each do |msg|
-          li = msg
+          li
+            = msg
 
   div.field
     = f.label "Nome do Analista" 

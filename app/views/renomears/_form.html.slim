@@ -1,0 +1,47 @@
+= simple_form_for(@renomear, html: {class: 'form-horizontal' }) do |f| 
+  - if @renomear.errors.any? 
+    div#error_explanation
+      h2
+        = pluralize(@renomear.errors.count, "error")
+        | não permitiu esse processo de ser salvo:
+
+      ul
+        - @renomear.errors.full_messages.each do |msg| 
+          li
+            = msg
+
+  div.field
+    = f.label :tipo
+    br
+    = f.text_field :tipo 
+  
+  div.field
+    = f.label :assunto
+    br
+    = f.text_field :assunto 
+  
+  div.field
+    = f.input :data, :as => :datetime_picker, :label => "Data" 
+  
+  div.field
+    = f.label :cprod
+    br
+    = f.text_field :cprod 
+  
+  div.field
+    = f.label :sem_cprod
+    br
+    = f.check_box :sem_cprod 
+  
+  div.field
+    = f.label :mais_de_um_processo
+    br
+    = f.check_box :mais_de_um_processo 
+  
+  div.field
+    = f.label :arquivo
+    br
+    = f.text_field :arquivo 
+  
+  div.actions
+    = f.submit 
